@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>MagH - "paw" for a moment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag "style" %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+   
+    <ul class="navigation">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/static_pages/about">About</a></li>
+        <li class="nav-item"><a href="/blogs">Blog</a></li>
+        <li class="nav-item"><a href="/contacts/new">Contact</a></li>
+    </ul>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger"></label>
+    <div class="site-wrap">
+        <div class="container">
+            <%= yield %>
+        </div>
+    </div>
 </body>
 </html>
